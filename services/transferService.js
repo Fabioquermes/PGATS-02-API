@@ -9,7 +9,7 @@ function transfer(req, res) {
   const userFrom = users.find(u => u.username === remetente);
   const userTo = users.find(u => u.username === destinatario);
   if (!userFrom || !userTo) {
-    return res.status(404).json({ message: 'Usuário remetente ou destinatário não encontrado.' });
+    return res.status(404).json({ message: 'Usuário remetente, destinatário não encontrado.' });
   }
   if (userFrom.saldo < valor) {
     return res.status(400).json({ message: 'Saldo insuficiente.' });
