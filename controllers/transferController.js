@@ -1,7 +1,10 @@
+
 const express = require('express');
-const router = express.Router();
-const transferService = require('../services/transferService');
 
-router.post('/', transferService.transfer);
+function createTransferController(transferService) {
+	const router = express.Router();
+	router.post('/', transferService.transfer);
+	return router;
+}
 
-module.exports = router;
+module.exports = createTransferController;
