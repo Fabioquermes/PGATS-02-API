@@ -67,7 +67,7 @@ describe('Transfer Controller', () => {
                 .send({
                     remetente: "fabio",
                     destinatario: "priscila",
-                    valor: 99  
+                    valor: 100  
                 });
             expect(resposta.status).to.equal(201);
             expect(resposta.body).to.have.property('message', 'Transferência realizada com sucesso.');
