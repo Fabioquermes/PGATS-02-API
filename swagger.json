@@ -107,6 +107,30 @@
           "403": { "description": "Transferências acima de R$ 5.000,00 só para favorecidos." },
           "404": { "description": "Usuário remetente ou destinatário não encontrado." }
         }
+      },
+      "get": {
+        "summary": "Listar transferências",
+        "responses": {
+          "200": {
+            "description": "Lista de transferências",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "remetente": { "type": "string" },
+                      "destinatario": { "type": "string" },
+                      "valor": { "type": "number" },
+                      "data": { "type": "string", "format": "date-time" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
